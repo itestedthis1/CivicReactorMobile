@@ -1,0 +1,26 @@
+<ion-header-bar class="bar-positive">
+  <h2 class="title">More Info</h2>
+</ion-header-bar>
+
+<ion-view>
+  <ion-content>
+    <ion-list class="list-inset">
+      <ion-item class="item-text-wrap"
+        ng-repeat="item in artists | filter: { shortname: whichartist }">
+          <img ng-src="img/{{item.shortname}}_tn.jpg"
+            alt="{{ item.name }} Photo">
+          <h2>{{ item.name }}</h2>
+          <h3>{{ item.reknown }}</h3>
+          <p>{{ item.bio }}</p>
+          <div class="blog-container" ng-hide="item.hasVideo" >
+              <h3>Blog text :</h3>
+              <p>lorum ipsum</p>
+          </div>
+          <div class="video-container" ng-show="item.hasVideo" >
+              <h3>VIDEO : </h3>
+              <iframe src="https://www.youtube.com/embed/t6X_A7BTxDA" frameborder="0" width="560" height="315"></iframe>
+          </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

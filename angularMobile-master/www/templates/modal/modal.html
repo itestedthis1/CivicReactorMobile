@@ -1,0 +1,31 @@
+<div class="modal">
+    <header class="bar bar-header bar-positive">
+        <h1 class="title">This is a Form.</h1>
+        <div class="button button-clear" ng-click="modal.hide()"><span class="icon ion-close"></span></div>
+    </header>
+    <content has-header="true" padding="true">
+        <form mobile-polyform ng-submit="doTheThing(formdata)" name="wizardInquiry">
+            <div class="list list-inset">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">What... is your name?</span>
+                    <input type="text" ng-model="formdata.q1" placeholder="It is 'Arthur', King of the Britons." required>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">What... is your quest? <span ng-show="message" ng-bind="message"></span></span>
+                    <input type="text" ng-model="formdata.q2"  placeholder="To seek the holy grail." ng-keydown="message = '.... Well hurry up now!'">
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        What... is your favorite color?
+                    </div>
+                    <select>
+                        <option selected>Blue</option>
+                        <option>Green</option>
+                        <option>No, yellow!...</option>
+                    </select>
+                </label>
+            </div>
+            <button class="button bar text-center" ng-disabled="submitted">Submit</button>
+        </form>
+    </content>
+</div>
